@@ -3,12 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Sistema.Visitas.Institucionales.Service;
+package Sistema.Visitas.Institucionales.Data;
 
 /**
  *
- * @author L.Michelle
+ * @author HP-PC
  */
-public class VisitasServices {
+public class FacultadRepository {
     
 }
