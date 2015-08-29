@@ -5,6 +5,11 @@
  */
 package Sistema.Visitas.Institucionales.Core;
 
+import Sistema.Visitas.Institucionales.Data.Conexion;
+import Sistema.Visitas.Institucionales.Core.Model.Rol;
+import Sistema.Visitas.Institucionales.Core.Model.Facultad;
+import Sistema.Visitas.Institucionales.Core.Model.Escuela;
+import Sistema.Visitas.Institucionales.Core.Model.Estado;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;

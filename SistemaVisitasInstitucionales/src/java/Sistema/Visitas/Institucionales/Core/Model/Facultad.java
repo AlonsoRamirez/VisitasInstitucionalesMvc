@@ -3,24 +3,21 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Sistema.Visitas.Institucionales.Core;
+package Sistema.Visitas.Institucionales.Core.Model;
 
 /**
  *
  * @author Robert Bonilla
  */
-public class Escuela {
+public class Facultad {
     int id;
-    int id_facultad;
     String nombre;
 
-    public Escuela() {
-        
+    public Facultad() {
     }
 
-    public Escuela(int id,  String nombre,int id_facultad) {
+    public Facultad(int id, String nombre) {
         this.id = id;
-        this.id_facultad = id_facultad;
         this.nombre = nombre;
     }
 
@@ -32,14 +29,6 @@ public class Escuela {
         this.id = id;
     }
 
-    public int getId_facultad() {
-        return id_facultad;
-    }
-
-    public void setId_facultad(int id_facultad) {
-        this.id_facultad = id_facultad;
-    }
-
     public String getNombre() {
         return nombre;
     }
@@ -47,6 +36,4 @@ public class Escuela {
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
-    
-    
 }
