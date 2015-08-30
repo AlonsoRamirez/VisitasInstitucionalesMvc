@@ -6,12 +6,13 @@
 package Sistema.Visitas.Institucionales.Core.Model;
 
 import java.util.List;
+import org.apache.struts.action.ActionForm;
 
 /**
  *
  * @author Robert Bonilla
  */
-public class Usuario {
+public class Usuario{
      int id;
     String nombre;
     String apellido;
