@@ -23,11 +23,7 @@ public interface CatalogosInterface {
     public boolean DeleteInstitucion(int id);
     public Institucion SaveInstitucion(Institucion institucion);
     
-    public Estado GetEstado(int id);
-    public List<Estado> GetEstados (int id,String nombre);
-    public boolean DeleteEstado(int id);
-    public Institucion SaveEstado(Estado estado);
-    
+     
     public Facultad GetFacultad(int id);
     public List<Facultad> GetFacultades (int id,String nombre);
     public boolean DeleteFacultad(int id);

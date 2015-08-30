@@ -1,11 +1,6 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package Sistema.Visitas.Institucionales.Data;
 import Sistema.Visitas.Institucionales.Data.Conexion;
-import Sistema.Visitas.Institucionales.Core.Model.Facultad;
+import Sistema.Visitas.Institucionales.Core.Model.Rol;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -13,30 +8,26 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 import javax.swing.DefaultComboBoxModel;
-/**
- *
- * @author L.Michelle
- */
-public class FacultadRepository {
+
+public class RolesRepository {
     private Connection cn;
-     private String sql;
-     
-     public FacultadRepository(){
+    private String sql;
+     public RolesRepository(){
          this.cn = new Conexion().getCon();
     }
 
     public Connection getCn() {
         return cn;
     }
-     /*------------------------------------------------Facultad--------------------------------------------------*/
-    public boolean guardarFacultad(Facultad facultad)
+    /*------------------------------------------------Rol--------------------------------------------------*/
+     public boolean guardarRol(Rol rol)
     {
         boolean resp = false;
         try 
         {
-            sql = "INSERT INTO facultad (nombre) Values(?)";
+            sql = "INSERT INTO roles (nombre) Values(?)";
             PreparedStatement cmd = this.cn.prepareStatement(sql);
-            cmd.setString(1, facultad.getNombre());
+            cmd.setString(1, rol.getNombre());
             cmd.executeUpdate();
             if(!this.cn.isClosed())
             {
@@ -49,16 +40,17 @@ public class FacultadRepository {
         }
         return resp;
     }
-    
-    public boolean modificarFacultad(Facultad facultad)
+     
+     
+     public boolean modificarRol(Rol rol)
     {
         boolean resp = false;
         try 
         {
-            sql = "update facultad set nombre = ? where id = ?";
+            sql = "update roles set nombre = ? where id = ?";
             PreparedStatement cmd = this.cn.prepareStatement(sql);
-            cmd.setString(1, facultad.getNombre());
-            cmd.setInt(2, facultad.getId());
+            cmd.setString(1, rol.getNombre());
+            cmd.setInt(2, rol.getId());
             cmd.executeUpdate();
             if(!this.cn.isClosed())
             {
@@ -71,14 +63,13 @@ public class FacultadRepository {
         }
         return resp;
     }
-    
-    public List<Facultad> cosultarFacultades(){
-        List<Facultad> listFacultad = new ArrayList<>();
+    public List<Rol> cosultarRoles(){
+        List<Rol> listRol = new ArrayList<>();
         try{
             Statement cmd = this.cn.createStatement();
-            ResultSet rs =cmd.executeQuery("SELECT f.id,f.nombre from facultad f");            
+            ResultSet rs =cmd.executeQuery("SELECT r.id,r.nombre from roles r");
             while(rs.next()){
-               listFacultad.add(new Facultad(rs.getInt(1),rs.getString(2)));
+               listRol.add(new Rol(rs.getInt(1),rs.getString(2)));
             }
             if(!this.cn.isClosed())
             {
@@ -88,15 +79,15 @@ public class FacultadRepository {
         catch(Exception e){
         System.err.println("Error" + e.getMessage());
         }
-        return listFacultad;
+        return listRol;
         }
-     public List<Facultad> cosultarFacultad(int id){
-        List<Facultad> listFacultad = new ArrayList<>();
+     public List<Rol> cosultarRol(int id){
+        List<Rol> listRol = new ArrayList<>();
         try{
             Statement cmd = this.cn.createStatement();
-            ResultSet rs =cmd.executeQuery("SELECT f.id,f.nombre from facultad f where f.id = "+id);            
+            ResultSet rs =cmd.executeQuery("SELECT r.id,r.nombre from roles r where r.id ="+id);
             while(rs.next()){
-               listFacultad.add(new Facultad(rs.getInt(1),rs.getString(2)));
+               listRol.add(new Rol(rs.getInt(1),rs.getString(2)));
             }
             if(!this.cn.isClosed())
             {
@@ -106,14 +97,15 @@ public class FacultadRepository {
         catch(Exception e){
         System.err.println("Error" + e.getMessage());
         }
-        return listFacultad;
+        return listRol;
         }
-     public boolean eliminarFacultad(int id)
+     
+    public boolean eliminarRol(int id)
     {
         boolean resp = false;
         try 
         {
-            sql = "Delete From facultad  where id = "+id;
+            sql = "Delete From roles  where id = "+id;
             PreparedStatement cmd = this.cn.prepareStatement(sql);
             cmd.executeUpdate();
             if(!this.cn.isClosed())
@@ -126,5 +118,5 @@ public class FacultadRepository {
             System.err.println("Error: " + e.getMessage());
         }
         return resp;
-    }    
+    }
 }

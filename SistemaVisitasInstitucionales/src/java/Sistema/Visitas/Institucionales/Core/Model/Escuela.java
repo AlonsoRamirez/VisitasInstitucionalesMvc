@@ -5,6 +5,8 @@
  */
 package Sistema.Visitas.Institucionales.Core.Model;
 
+import java.util.List;
+
 /**
  *
  * @author Robert Bonilla
@@ -13,7 +15,7 @@ public class Escuela {
     int id;
     int id_facultad;
     String nombre;
-
+    List<Facultad> listFacultad;
     public Escuela() {
         
     }
@@ -22,6 +24,12 @@ public class Escuela {
         this.id = id;
         this.id_facultad = id_facultad;
         this.nombre = nombre;
+    }
+     public Escuela(int id,  String nombre,int id_facultad,List<Facultad> listFacultad) {
+        this.id = id;
+        this.id_facultad = id_facultad;
+        this.nombre = nombre;
+        this.listFacultad = listFacultad;
     }
 
     public int getId() {
@@ -46,6 +54,14 @@ public class Escuela {
 
     public void setNombre(String nombre) {
         this.nombre = nombre;
+    }
+
+    public List<Facultad> getListFacultad() {
+        return listFacultad;
+    }
+
+    public void setListFacultad(List<Facultad> listFacultad) {
+        this.listFacultad = listFacultad;
     }
     
     
