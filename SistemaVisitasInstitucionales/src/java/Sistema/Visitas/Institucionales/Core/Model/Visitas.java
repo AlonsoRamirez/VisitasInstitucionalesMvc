@@ -5,6 +5,8 @@
  */
 package Sistema.Visitas.Institucionales.Core.Model;
 
+import java.util.List;
+
 /**
  *
  * @author Robert Bonilla
@@ -16,22 +18,52 @@ public class Visitas {
     String fechaInicio;
     String fechaFin;
     boolean visitaRealizada;
-    int id_estado;
+    String estado;
     String comentarios;
+    String comentariosVisita;
+    List<Usuario> listUsario;
+    List<Institucion> listInstitucion;
+    List<Usuario> listUsarioAsigno;
 
-    public Visitas(int id_usuario, int id_institucion, int id_usuarioAsigno, String fechaInicio, String fechaFin, boolean visitaRealizada, int id_estado, String comentarios) {
+    public Visitas() {
+    }
+
+    public Visitas(int id_usuario, int id_institucion, int id_usuarioAsigno, String fechaInicio, String fechaFin, boolean visitaRealizada, String estado, String comentarios, String comentariosVisit) {
         this.id_usuario = id_usuario;
         this.id_institucion = id_institucion;
         this.id_usuarioAsigno = id_usuarioAsigno;
         this.fechaInicio = fechaInicio;
         this.fechaFin = fechaFin;
         this.visitaRealizada = visitaRealizada;
-        this.id_estado = id_estado;
+        this.estado = estado;
         this.comentarios = comentarios;
+        this.comentariosVisita = comentariosVisit;
+    }
+    
+     public Visitas(int id_usuario, int id_institucion, int id_usuarioAsigno, String fechaInicio, String fechaFin, boolean visitaRealizada, String estado, String comentarios, String comentariosVisit,List<Usuario> listUsuario,List<Institucion> listInstitucion,List<Usuario> listUsuarioAsigno) {
+        this.id_usuario = id_usuario;
+        this.id_institucion = id_institucion;
+        this.id_usuarioAsigno = id_usuarioAsigno;
+        this.fechaInicio = fechaInicio;
+        this.fechaFin = fechaFin;
+        this.visitaRealizada = visitaRealizada;
+        this.estado = estado;
+        this.comentarios = comentarios;
+        this.comentariosVisita = comentariosVisit;
+        this.listUsario = listUsuario;
+        this.listInstitucion = listInstitucion;
+        this.listUsarioAsigno = listUsuarioAsigno;
     }
 
-    public Visitas() {
+    public String getComentariosVisita() {
+        return comentariosVisita;
     }
+
+    public void setComentariosVisita(String comentariosVisita) {
+        this.comentariosVisita = comentariosVisita;
+    }
+
+   
 
     public int getId_usuario() {
         return id_usuario;
@@ -44,7 +76,13 @@ public class Visitas {
     public int getId_institucion() {
         return id_institucion;
     }
-
+    public boolean getvisitaRealizada() {
+        return visitaRealizada;
+    }
+    public void setvisitaRealizada(boolean visitaRealizada) {
+        this.visitaRealizada = visitaRealizada;
+    }
+    
     public void setId_institucion(int id_institucion) {
         this.id_institucion = id_institucion;
     }
@@ -81,13 +119,39 @@ public class Visitas {
         this.visitaRealizada = visitaRealizada;
     }
 
-    public int getId_estado() {
-        return id_estado;
+    public String getEstado() {
+        return estado;
     }
 
-    public void setId_estado(int id_estado) {
-        this.id_estado = id_estado;
+    public void setEstado(String estado) {
+        this.estado = estado;
     }
+
+    public List<Usuario> getListUsario() {
+        return listUsario;
+    }
+
+    public void setListUsario(List<Usuario> listUsario) {
+        this.listUsario = listUsario;
+    }
+
+    public List<Institucion> getListInstitucion() {
+        return listInstitucion;
+    }
+
+    public void setListInstitucion(List<Institucion> listInstitucion) {
+        this.listInstitucion = listInstitucion;
+    }
+
+    public List<Usuario> getListUsarioAsigno() {
+        return listUsarioAsigno;
+    }
+
+    public void setListUsarioAsigno(List<Usuario> listUsarioAsigno) {
+        this.listUsarioAsigno = listUsarioAsigno;
+    }
+
+   
 
     public String getComentarios() {
         return comentarios;

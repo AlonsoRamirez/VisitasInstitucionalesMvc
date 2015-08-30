@@ -5,6 +5,8 @@
  */
 package Sistema.Visitas.Institucionales.Core.Model;
 
+import java.util.List;
+
 /**
  *
  * @author Robert Bonilla
@@ -18,11 +20,15 @@ public class Usuario {
     int id_rol;
     String telefono;
     String contraseña;
+    int id_escuela;
+    boolean tiempoCompleto;
+    List<Rol> listRol;
+    List<Escuela> listEscuela;
 
     public Usuario() {
     }
 
-    public Usuario(int id, String nombre, String apellido, String correo, String usuario, int id_rol, String telefono, String contraseña) {
+    public Usuario(int id, String nombre, String apellido, String correo, String usuario, int id_rol, String telefono, String contraseña,int escuela,boolean tCompleto) {
         this.id = id;
         this.nombre = nombre;
         this.apellido = apellido;
@@ -31,6 +37,22 @@ public class Usuario {
         this.id_rol = id_rol;
         this.telefono = telefono;
         this.contraseña = contraseña;
+        this.id_escuela = escuela;
+        this.tiempoCompleto = tCompleto;
+    }
+      public Usuario(int id, String nombre, String apellido, String correo, String usuario, int id_rol, String telefono, String contraseña,int escuela,boolean tCompleto,List<Rol> listRol,List<Escuela> listEscuela) {
+        this.id = id;
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.correo = correo;
+        this.usuario = usuario;
+        this.id_rol = id_rol;
+        this.telefono = telefono;
+        this.contraseña = contraseña;
+        this.id_escuela = escuela;
+        this.tiempoCompleto = tCompleto;
+        this.listEscuela = listEscuela;
+        this.listRol = listRol;
     }
 
     public int getId() {
@@ -93,8 +115,40 @@ public class Usuario {
         return contraseña;
     }
 
+    public List<Rol> getListRol() {
+        return listRol;
+    }
+
+    public void setListRol(List<Rol> listRol) {
+        this.listRol = listRol;
+    }
+
+    public List<Escuela> getListEscuela() {
+        return listEscuela;
+    }
+
+    public void setListEscuela(List<Escuela> listEscuela) {
+        this.listEscuela = listEscuela;
+    }
+
     public void setContraseña(String contraseña) {
         this.contraseña = contraseña;
+    }
+
+    public int getId_escuela() {
+        return id_escuela;
+    }
+
+    public void setId_escuela(int id_escuela) {
+        this.id_escuela = id_escuela;
+    }
+
+    public boolean isTiempoCompleto() {
+        return tiempoCompleto;
+    }
+
+    public void setTiempoCompleto(boolean tiempoCompleto) {
+        this.tiempoCompleto = tiempoCompleto;
     }
     
     

@@ -7,10 +7,11 @@ package Sistema.Visitas.Institucionales.Service;
 
 import Sistema.Visitas.Institucionales.Core.CatalogosInterface;
 import Sistema.Visitas.Institucionales.Core.Model.Escuela;
-import Sistema.Visitas.Institucionales.Core.Model.Estado;
 import Sistema.Visitas.Institucionales.Core.Model.Facultad;
 import Sistema.Visitas.Institucionales.Core.Model.Institucion;
 import Sistema.Visitas.Institucionales.Core.Model.Rol;
+import Sistema.Visitas.Institucionales.Data.EscuelasRepository;
+import Sistema.Visitas.Institucionales.Data.InstitucionesRepository;
 import java.util.List;
 
 /**
@@ -21,64 +22,61 @@ abstract class CatalogoServices implements CatalogosInterface{
 
     @Override
     public Escuela GetEscuela(int id) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        EscuelasRepository EscuelaRep = new EscuelasRepository();        
+        return EscuelaRep.cosultarEscuela(id).get(1);
+        //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
-    @Override
-    public List<Escuela> GetEscuelas(int id, String nombre) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public List<Escuela> GetEscuelas() {
+         EscuelasRepository EscuelaRep = new EscuelasRepository();        
+        return EscuelaRep.cosultarEscuelas();
+        //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
     public boolean DeleteEscuela(int id) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+         EscuelasRepository EscuelaRep = new EscuelasRepository();        
+        return EscuelaRep.eliminarEscuela(id);
+        //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
     public Escuela SaveEscuela(Escuela escuela) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+         EscuelasRepository EscuelaRep = new EscuelasRepository();        
+        EscuelaRep.guardarEscuela(escuela);
+        return escuela;
+       //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
     public Institucion GetInstitucion(int id) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+         InstitucionesRepository InsRep = new InstitucionesRepository();
+        return InsRep.cosultarInstitucion(id).get(1);
+      //  throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
     public List<Institucion> GetInstituciones(int id, String nombre) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+         InstitucionesRepository InsRep = new InstitucionesRepository();
+        return InsRep.cosultarInstituciones();
+       // throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
     public boolean DeleteInstitucion(int id) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+         InstitucionesRepository InsRep = new InstitucionesRepository();
+        return InsRep.eliminarInstitucion(id);
+      //  throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
     public Institucion SaveInstitucion(Institucion institucion) {
+         InstitucionesRepository InsRep = new InstitucionesRepository();
+        InsRep.guardarInstitucion(institucion);
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
-    @Override
-    public Estado GetEstado(int id) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public List<Estado> GetEstados(int id, String nombre) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public boolean DeleteEstado(int id) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public Institucion SaveEstado(Estado estado) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
+    
     @Override
     public Facultad GetFacultad(int id) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
