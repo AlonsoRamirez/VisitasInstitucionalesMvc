@@ -5,8 +5,9 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ taglib uri="http://struts.apache.org/tags-html" prefix="html" %>
 <!DOCTYPE html>
-<html>
+<html:html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <meta name ="viewport" content="width=device-width, initial-scale=1.0">
@@ -23,17 +24,17 @@
     <body>
     <div class="jumbotron loginbox">
     <h4>Sistema de Visitas Institucionales UDB</h4> 
-    <form action="/login" method="post" > 
-              <label>  Usuario: </label> 
-              <input title="introduzca su usuario" type="text" class="form-control" name="usuario" required/><br><br>
+    <html:form action="/login" method="post"> 
+              <label>  Usuario: </label>
+              <td><html:text property="usuario"/></td><br>
               <label>  Password: </label> 
-              <input title="introduzca su password" type="password" class="form-control" name="password" required/><br><br>
-              <input type="submit" class="btn btn-success" value="Entrar"><br><br>
+              <td><html:password property="password"/></td>
+              <html:submit property="submit" value="Validar"/>
               <img src="udb.png" height="150" width="150" hspace="90">
                  
-    </form>	
+    </html:form>	
     </div>  
 	 <body>
                 				
-</html>
+</html:html>
 
