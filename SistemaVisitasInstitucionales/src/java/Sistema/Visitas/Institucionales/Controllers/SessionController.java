@@ -2,7 +2,7 @@ package Sistema.Visitas.Institucionales.Controllers;
 
 
 import Sistema.Visitas.Institucionales.Core.Model.Autenticacion;
-import Sistema.Visitas.Institucionales.Service.AutenticacionService;
+import Sistema.Visitas.Institucionales.Service.Autenticacion;
 import javax.servlet.http.*;
 import org.apache.struts.action.*;
 
