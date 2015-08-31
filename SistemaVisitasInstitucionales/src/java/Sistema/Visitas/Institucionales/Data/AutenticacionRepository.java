@@ -7,6 +7,7 @@ package Sistema.Visitas.Institucionales.Data;
 
 import Sistema.Visitas.Institucionales.Core.Model.Autenticacion;
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
 
@@ -32,7 +33,8 @@ public class AutenticacionRepository {
     try{
             Statement cmd = this.cn.createStatement();
             ResultSet rs =cmd.executeQuery("SELECT * FROM usuarios WHERE contrasena ='"+ aut.getPassword()+"' AND usuario ='"+aut.getUsuario()+"'");
-            
+                 
+
             estado = rs.next();
             if(!this.cn.isClosed())
             {

@@ -25,6 +25,7 @@
   <!-- ==========Forward's  Globales ============================== -->
   <global-forwards>
         <forward name="login" path="/login.jsp"/>
+        <forward name="error" path="/error.jsp"/>
   </global-forwards>
 
 
