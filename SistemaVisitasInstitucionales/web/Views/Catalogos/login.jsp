@@ -23,7 +23,7 @@
     <body>
     <div class="jumbotron loginbox">
     <h4>Sistema de Visitas Institucionales UDB</h4> 
-    <form action="/validar" method="post" name="flogin" > 
+    <form action="/login" method="post" > 
               <label>  Usuario: </label> 
               <input title="introduzca su usuario" type="text" class="form-control" name="usuario" required/><br><br>
               <label>  Password: </label> 

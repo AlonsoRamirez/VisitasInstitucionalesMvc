@@ -3,12 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Sistema.Visitas.Institucionales.Data;
+package Sistema.Visitas.Institucionales.Controllers;
 
 /**
  *
  * @author L.Michelle
  */
-public class InstitucionesController {
+public class FacultadController {
     
 }

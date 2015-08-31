@@ -15,7 +15,7 @@ public class Conexion {
     private Connection con;
       
     public Connection getCon(){
-    String url="jdbc:mysql://localhost:3306/SistemaVisitas";    
+    String url="jdbc:mysql://localhost:3306/visitasinstitucionales";    
 String driver="com.mysql.jdbc.Driver";
         try {
           Class.forName(driver);
