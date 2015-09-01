@@ -9,6 +9,6 @@ package Sistema.Visitas.Institucionales.Service;
  *
  * @author L.Michelle
  */
-public class Visitas {
+public class VisitasService {
     
 }
